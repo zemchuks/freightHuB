@@ -1,4 +1,4 @@
-# FreightHub Frontend Coding Challenge
+# FreightHub Frontend Coding Challenge - (Updated)
 
 Welcome to the FreightHub frontend coding challenge! Please read the following instructions carefully.
 
@@ -46,11 +46,8 @@ The full criteria for evaluating the coding challenge can be found [here](./Crit
 
 - Clone this repository.
 - A RESTful API for `shipments` is provided with the challenge. To run, follow: [How to run API server](#how-to-run-api-server)
-- Complete your project as described above within your local repository.
-- Make sure that there are scripts to start both the server and the client.
-- Ensure everything you want to commit is committed before you bundle.
-- Create a git bundle: `git bundle create your_name.bundle --all`
-- Email the bundle file to your point of contact.
+- Create a new branch in your cloned implementation called `solution`.
+- Deploy on netlify or heroku. (Nice to have)
 
 **In order to be fair to all candidates, please refrain from sharing your solution on public repository hosting services such as GitHub and Bitbucket.**
 
@@ -66,8 +63,4 @@ yarn server or npm run server
 Check [json-server](https://github.com/typicode/json-server) for more information.
 
 # Time limit
-
-There is no hard time limit for this coding challenge. However, we believe that 3-4 hours is sufficient for the must-have parts of the application. While we appreciate all the effort put into the challenge, we also do not want to take up too much of your time. Our advice is to focus on making sure [that the application works properly and has some tests](Criteria.md#must-have) before moving on to secondary objectives. Happy coding!
-
-Good luck,
-The FreightHub Team
+5 days
