@@ -1,6 +1,6 @@
 # FreightHub Fullstack Coding Challenge
 
-Welcome to the FreightHub frontend coding challenge! Please read the following instructions carefully.
+Welcome to the FreightHub Fullstack coding challenge! Please read the following instructions carefully.
 
 **Your goal is to set up an application which enables the user to view and manage shipments.**
 
@@ -12,7 +12,6 @@ Welcome to the FreightHub frontend coding challenge! Please read the following i
     -   [Technology requirements](#technology-requirements)
     -   [Code requirements](Criteria.md#must-have)
 -   [How to submit](#how-to-submit)
--   [How to run API server](#how-to-run-api-server)
 -   [Time limit](#time-limit)
 
 # Business need
@@ -46,15 +45,10 @@ The full criteria for evaluating the coding challenge can be found [here](./Crit
 # How to submit
 
 - Clone this repository.
-- A RESTful API for `shipments` is provided with the challenge. To run, follow: [How to run API server](#how-to-run-api-server)
 - Create a new branch in your cloned implementation called `solution`.
 - Deploy on netlify or heroku. (Nice to have)
 
 **In order to be fair to all candidates, please refrain from sharing your solution on public repository hosting services such as GitHub and Bitbucket.**
-
-```
-
-Check [json-server](https://github.com/typicode/json-server) for more information.
 
 # Time limit
 7 days
