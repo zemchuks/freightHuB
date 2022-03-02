@@ -1,24 +1,23 @@
+import React, { Fragment } from 'react'
 import './App.css';
+import SearchBar from './Components/SearchBar';
+import Footer from './Components/Footer';
+import Shippings from './Components/Shippings';
+
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
+import 'material-design-icons/iconfont/material-icons.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello div</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+        <div className="app-container">
+          <SearchBar />
+          <Shippings />
+          <Footer />
+        </div>
+    </Fragment>
+    
   );
 }
 
