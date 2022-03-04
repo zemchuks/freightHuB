@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "client": "npm start --prefix client",
-    "server": "json-server --watch db.json",
+    "server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {

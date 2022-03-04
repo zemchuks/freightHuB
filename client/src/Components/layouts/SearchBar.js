@@ -1,21 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { searchShippingLogs } from '../../redux/actions/shippingActions'
 
  const SearchBar = () => {
 
   const [isActive, setIsActive] = useState(false)
+  const id = useRef('')
+  const dispatch = useDispatch()
 
   const handleToggle = () => {
     document.documentElement.classList.toggle('dark')
     setIsActive(!isActive)
   }
+  const searchInput = e => {
+    if (id.current.value !== '') {
+        dispatch(searchShippingLogs(e.target.value))
+    } 
+ }
  
         return (
           <div className="container app-header">
           <div className="app-header-left">
             <span className="app-icon"></span>
-            <p className="app-name">Records API</p>
+            <p className="app-name">FreightHub</p>
             <div className="search-wrapper">
-              <input className="search-input browser-default" type="text" placeholder="Search"  onChange={(e) =>  onSearch(e)} />
+              <input className="search-input browser-default" type="text" ref={id} onChange={searchInput} placeholder="Search" />
               <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
             </div>
           </div>
@@ -29,7 +38,7 @@ import React, { useState } from 'react'
             
             <button className="profile-btn">
               <img src="images/bruno2.jpg" alt='profile-img' />
-              <span>Benson M.</span>
+              <span>Bruno E.</span>
             </button>
           </div>
           
