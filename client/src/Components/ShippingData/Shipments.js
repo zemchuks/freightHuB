@@ -9,7 +9,7 @@ const Shippings = () => {
     const dispatch = useDispatch()
     const shipments = useSelector(state => state.shipments)
     const { shippings, loading } = shipments
-    console.log(shipments)
+    console.log(shipments) 
 
 
     useEffect(() => {
