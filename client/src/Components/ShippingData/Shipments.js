@@ -40,7 +40,7 @@ const Shippings = () => {
                 <h4 className='center'>Shipping Logs</h4>
             </li>
             {!loading && shippings.length === 0 ? (<p className='center'>No shipments to show..</p>) : (
-          shippings.slice(0, rowsPerPage).map((shipments) => <ShippingItem shipments={shipments} key={shipments.id} />)
+          shippings.slice(0, rowsPerPage).map((shipments, index) => <ShippingItem shipments={shipments} key={index} />)
         )}
         </ul>
 

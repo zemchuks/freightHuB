@@ -17,7 +17,6 @@ const EditShippingName = () => {
   }, [current])
 
   const onSubmit = () => {
-    console.log(name)
     if (name === '') {
       M.toast({ html: "Please enter a new item name" })
     } else {

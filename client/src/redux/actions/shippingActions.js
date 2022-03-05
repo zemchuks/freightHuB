@@ -51,6 +51,7 @@ export const updateShippingLogs = (item) => async (dispatch) => {
                 name: item.name
             }
         });
+        console.log(data)
         dispatch({
             type: types.UPDATE_ITEM_NAME,
             payload: data
@@ -65,9 +66,9 @@ export const updateShippingLogs = (item) => async (dispatch) => {
     }
 }
   // Set Current Log
-  export const setCurrent = (name) => async (dispatch) => {
+  export const setCurrent = (id) => async (dispatch) => {
     
-          dispatch({ type: types.SET_CURRENT, payload: name})
+          dispatch({ type: types.SET_CURRENT, payload: id})
     }
     
     // Clear Current Log

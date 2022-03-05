@@ -25,7 +25,7 @@ const ShippingItem = ({ shipments }) => {
                 {/* SHipping Details */}
                 <div className='grey-text'>
                     <a href='#edit-log-modal' className='modal-trigger black-text bold' onClick={() => dispatch(setCurrent(shipments))}>
-                    Item Name: {" "} {shipments.name}
+                    Item Name: {" "} {shipments.name} {" "}
                     </a>
                    
                      last updated on{" "}
@@ -35,14 +35,14 @@ const ShippingItem = ({ shipments }) => {
                 <span className='black-text'>Shipped by: </span> {" "}
                 {shipments.mode === 'sea' ? <i className='material-icons tiny'>directions_boat</i> : <i className='material-icons tiny'>flight</i>} <br/>
 
-                {/* <span>Cargo: {" "} {shipments.cargo.map((item, key) =>( 
-                    <div key={key}>
+                <span>Cargo: {" "} {shipments.cargo ? shipments.cargo.map((item, index) =>( 
+                    <div key={index}>
                         <p>{item.type}</p>
                         <p>{item.description}</p>
                         <p>{item.volume}</p>
                     </div>
-                    ))}
-                </span> */}
+                    )) : <p>No cargos available</p>}
+                </span>
             </div>
             
                 <a href='#!' className='secondary-content'>
