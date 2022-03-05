@@ -39,15 +39,22 @@ export const searchShippingLogs = (id) => async (dispatch) => {
     }
 }
 
-export const updateShippingLogs = (shipment) => async (dispatch) => {
+export const updateShippingLogs = (item) => async (dispatch) => {
+    console.log('check', item)
     try {
-        const { data } = await axios.put(`/shipments/${shipment.id}`)
-
+        // const { data } = await axios.put(`/shipments/${id.id}`)
+        // General HTTP function
+        const {data} = await axios({
+            method: 'put',
+            url: `/shipments/${item.id}`,
+            data: {
+                name: item.name
+            }
+        });
         dispatch({
             type: types.UPDATE_ITEM_NAME,
             payload: data
         })
-
 
     } catch (err) {
         console.log(err.response)
@@ -58,15 +65,14 @@ export const updateShippingLogs = (shipment) => async (dispatch) => {
     }
 }
   // Set Current Log
-  export const setCurrent = shipment => {
-    return {
-        type: types.SET_CURRENT, payload: shipment
-    }
+  export const setCurrent = (name) => async (dispatch) => {
+    
+          dispatch({ type: types.SET_CURRENT, payload: name})
     }
     
     // Clear Current Log
-    export const clearCurrent = () => {
-        return { 
-            type: types.CLEAR_CURRENT
-        }
-    }
+    export const clearCurrent = () => async (dispatch) => {
+        
+            dispatch({ type: types.CLEAR_CURRENT })
+        
+      }

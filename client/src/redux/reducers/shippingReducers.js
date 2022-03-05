@@ -44,8 +44,9 @@ export const updateShippingsReducer = (state = { shippings: [], loading: false, 
         
         case types.UPDATE_ITEM_NAME:
             return {
-                loading: false,
-                shippings: [...state.shippings, action.payload]
+                ...state,
+                shippings: state.shippings.map(ship => ship.id === action.payload.id ? action.payload : ship),
+                loading: false
             }
         case types.SET_CURRENT:
             return {

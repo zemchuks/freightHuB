@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Preloader from '../layouts/Preloader'
 import ShippingItem from './ShippingItem'
 import { getAllShippingDetails } from '../../redux/actions/shippingActions'
+import TablePagination from '@mui/material/TablePagination/TablePagination'
 
 const Shippings = () => {
     const dispatch = useDispatch()
@@ -10,10 +11,24 @@ const Shippings = () => {
     const { shippings, loading } = shipments
     console.log(shipments)
 
+
     useEffect(() => {
         dispatch(getAllShippingDetails())
         // eslint-disable-next-line
     }, [])
+
+        // PAGINATION
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+      };
+    
+      const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+      };
 
     if(loading || shippings === null) {
         return <Preloader />
@@ -24,8 +39,20 @@ const Shippings = () => {
             <li className='collection-header'>
                 <h4 className='center'>Shipping Logs</h4>
             </li>
-            {!loading && shippings.length === 0 ? (<p className='center'>No shipments to show..</p>) : shippings.map(shipments => <ShippingItem shipments={shipments} key={shipments.id} />)}
+            {!loading && shippings.length === 0 ? (<p className='center'>No shipments to show..</p>) : (
+          shippings.slice(0, rowsPerPage).map((shipments) => <ShippingItem shipments={shipments} key={shipments.id} />)
+        )}
         </ul>
+
+        <TablePagination
+        component="div"
+        count={shippings?.length}
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        rowsPerPageOptions={[10, 20, 30]}
+      />
         </div>
     )
 }
