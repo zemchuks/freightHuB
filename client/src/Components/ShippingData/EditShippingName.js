@@ -13,6 +13,7 @@ const EditShippingName = () => {
   useEffect(() => {
     if (current !== null) {
       setName(current.name)
+      // ?this is rad
     }
   }, [current])
 
