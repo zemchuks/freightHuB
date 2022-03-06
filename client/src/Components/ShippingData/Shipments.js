@@ -39,9 +39,9 @@ const Shippings = () => {
             <li className='collection-header'>
                 <h4 className='center'>Shipping Logs</h4>
             </li>
-            {!loading && shippings !== null ? (
+            {!loading && shippings.length === null ? (<p className='center'>No shipments to show..</p>) : (
           shippings.slice(0, rowsPerPage).map((shipments, index) => <ShippingItem shipments={shipments} key={index} />)
-        ) : (<p className='center'>No shipments to show..</p>) }
+        )}
         </ul>
 
         <TablePagination
