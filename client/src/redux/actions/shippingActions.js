@@ -4,7 +4,7 @@ import * as types from "../types"
 export const getAllShippingDetails = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_SHIPPING_DETAILS })
-    const { data } = await axios.get("http://localhost:5000/shipments")
+    const { data } = await axios.get("./db.json/shipments")
     console.log(data)
     dispatch({
       type: types.GET_SHIPPING_DETAILS_SUCCESS,
@@ -23,7 +23,7 @@ export const listShippingDetail = (id) => async (dispatch) => {
   try {
     dispatch({ type: types.SHIP_DETAILS_REQUEST })
 
-    const { data } = await axios.get(`http://localhost:5000/shipments/${id}`)
+    const { data } = await axios.get(`./db.json/shipments/${id}`)
 
     dispatch({
       type: types.SHIP_DETAILS_SUCCESS,
@@ -39,7 +39,7 @@ export const listShippingDetail = (id) => async (dispatch) => {
 
 export const searchShippingLogs = (id) => async (dispatch) => {
   try {
-    const { data } = await axios.get(`http://localhost:5000/shipments/?q=${id}`)
+    const { data } = await axios.get(`./db.json/shipments/?q=${id}`)
 
     dispatch({
       type: types.SEARCH_SHIPPING_LOGS,
@@ -61,7 +61,7 @@ export const updateShippingLogs = (item) => async (dispatch) => {
     // General HTTP function
     const { data } = await axios({
       method: "put",
-      url: `http://localhost:5000/shipments/${item.id}`,
+      url: `./db.json/shipments/${item.id}`,
       data: {
         name: item.name,
       },
