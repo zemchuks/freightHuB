@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Moment from "react-moment"
 import { useDispatch } from 'react-redux'
 import { setCurrent } from "../../redux/actions/shippingActions"
@@ -58,6 +59,11 @@ const ShippingItem = ({ shipments }) => {
                 </a>
 
       </li>
+      <div className="days-left more-wrapper" style={{color: "#ff942e", cursor: 'pointer'}}>
+         <Link to={`/shipments/${shipments.id}`}>
+                See more
+        </Link>
+       </div>
     </div>
   )
 }

@@ -19,14 +19,14 @@ const Shippings = () => {
 
         // PAGINATION
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(20);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
       };
     
       const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
+        setRowsPerPage(parseInt(event.target.value, 20));
         setPage(0);
       };
 
@@ -51,7 +51,7 @@ const Shippings = () => {
         onPageChange={handleChangePage}
         rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-        rowsPerPageOptions={[10, 20, 30]}
+        rowsPerPageOptions={[20, 30]}
       />
         </div>
     )

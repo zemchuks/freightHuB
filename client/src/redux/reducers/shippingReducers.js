@@ -63,3 +63,26 @@ export const updateShippingsReducer = (state = { shippings: [], loading: false, 
             return state;
     }
 }
+
+export const shippingDetailsReducer = (state = { shipDetails: {} }, action) => {
+    switch(action.type) {
+        case types.SHIP_DETAILS_REQUEST:
+            return {
+                loading: true,
+               shipDetails: {}
+            }
+        case types.SHIP_DETAILS_SUCCESS:
+            return {
+                loading: false,
+                shipDetails: action.payload
+            }
+        case types.SHIP_DETAILS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+       
+        default:
+            return state;
+    }
+}

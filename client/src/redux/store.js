@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { getAllShippingsReducer, searchShippingsReducer, updateShippingsReducer } from './reducers/shippingReducers'
+import { getAllShippingsReducer, searchShippingsReducer, updateShippingsReducer, shippingDetailsReducer } from './reducers/shippingReducers'
 import thunk  from 'redux-thunk'
 
 const initialState = {}
@@ -10,7 +10,8 @@ export const ConfigureStore = () => {
         combineReducers({
             shipments: getAllShippingsReducer,
             search: searchShippingsReducer,
-            update: updateShippingsReducer
+            update: updateShippingsReducer,
+            shipDetail: shippingDetailsReducer
         }),
         initialState, 
         composeWithDevTools(applyMiddleware(thunk))

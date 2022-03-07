@@ -62,6 +62,10 @@ modal-style {
   width: 60%;
   height: 60%;
 }
+.nav-wrapper {
+  background-color: #F3F6FD;
+  
+}
 .app-container {
   width: 100%;
   display: flex;
