@@ -6,7 +6,7 @@ import { listShippingDetail } from "../redux/actions/shippingActions"
 const ShipmentScreen = ({ match }) => {
   const dispatch = useDispatch()
   const shipDetail = useSelector((state) => state.shipDetail)
-  const { shipDetails, loading } = shipDetail
+  const { shipDetails } = shipDetail
 
   const params = useParams()
     const { id } = params
