@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="row">
               <div className="col l6 s12">
                 <h5 className="white-text">Freighthub Frontend challenge</h5>
-                <p className="grey-text text-lighten-4">This is a project of ENYE.org. This project was done by Benson Madueke</p>
+                <p className="grey-text text-lighten-4">This is a project of FreightHub.com This project was done by Bruno Ezemba</p>
               </div>
               <div className="col l4 offset-l2 s12">
                 <h5 className="white-text">Contact Me @...</h5>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <div className="footer-copyright">
             <div className="container">
-            © 2021 Copyright
+            © 2022 Copyright
             </div>
           </div>
         </main>
