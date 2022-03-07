@@ -14,6 +14,11 @@ export const getAllShippingsReducer = (state = { shippings: [], loading: false }
             return { 
                 loading: false, error: action.payload 
             }
+        case types.SEARCH_SHIPPING_LOGS:
+            return {
+                loading: false,
+                shippings: action.payload
+            }
        
         default:
             return state;
