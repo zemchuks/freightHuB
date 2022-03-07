@@ -1,0 +1,1 @@
+export const baseurl = 'https://freighthubserver.herokuapp.com/shipments'
